@@ -1,7 +1,7 @@
 import { getDataForCity } from './city.js';
 import { renderClocks } from './clock.js';
 
-const cities = ['London', 'Melbourne', 'Adelaide', 'Darwin'];
+const cities = ['London', 'Melbourne', 'Adelaide', 'Darwin', 'Coolgardie'];
 
 async function updateClocks() {
     const cityTimes = await Promise.all(
