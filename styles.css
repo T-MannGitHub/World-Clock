@@ -1,0 +1,33 @@
+    #clock-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        /* space between rows */
+    }
+
+    .clock-row {
+        display: flex;
+        align-items: center;
+        /* vertically center contents */
+        /* :contentReference[oaicite:1]{index=1} */
+        gap: 1rem;
+        /* space between city, emoji, time, temp */
+        padding: 0.5rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+    }
+
+    .clock-row .city {
+        font-weight: bold;
+        min-width: 100px;
+        /* align city names in a column */
+    }
+
+    .clock-row .time,
+    .clock-row .temp {
+        font-family: monospace;
+    }
+
+    .clock-row .emoji {
+        font-size: 1.2rem;
+    }
