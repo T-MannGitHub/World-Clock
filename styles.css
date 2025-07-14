@@ -10,7 +10,7 @@
         align-items: center;
         /* vertically center contents */
         /* :contentReference[oaicite:1]{index=1} */
-        gap: 1rem;
+        gap: 2rem;
         /* space between city, emoji, time, temp */
         padding: 0.5rem 1rem;
         border: 1px solid #ddd;
@@ -26,6 +26,7 @@
     .clock-row .time,
     .clock-row .temp {
         font-family: monospace;
+        min-width: 40px;
     }
 
     .clock-row .emoji {
