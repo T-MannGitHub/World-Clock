@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multi-City Clock</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007ACC">
+
     <style>
         body {
             font-family: sans-serif;
@@ -26,5 +29,12 @@
     <div id="clock-container"></div>
     <script type="module" src="main.js"></script>
 </body>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').then(() => {
+            console.log('Service worker registered');
+        });
+    }
+</script>
 
 </html>
