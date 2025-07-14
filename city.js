@@ -2,8 +2,10 @@ const timezones = {
     London: 'Europe/London',
     Melbourne: 'Australia/Melbourne',
     Adelaide: 'Australia/Adelaide',
-    Darwin: 'Australia/Darwin'
+    Darwin: 'Australia/Darwin',
+    Coolgardie: 'Australia/Perth'
 };
+
 
 function getEmojiForTemp(t) {
     if (t < 10) return '❄️';
@@ -14,7 +16,7 @@ function getEmojiForTemp(t) {
 
 function getEmojiForTime(hour) {
     if (hour < 12) return '🌅';
-    if (hour < 18) return '⛅';
+    if (hour < 18) return '🫖';
     return '🌙';
 }
 
