@@ -15,6 +15,7 @@ function getEmojiForTemp(t) {
 }
 
 function getEmojiForTime(hour) {
+    if (hour < 5) return '🌙';
     if (hour < 12) return '🌅';
     if (hour < 18) return '🍵';
     return '🌙';
