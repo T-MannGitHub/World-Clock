@@ -3,7 +3,8 @@ const timezones = {
     Melbourne: 'Australia/Melbourne',
     Adelaide: 'Australia/Adelaide',
     Darwin: 'Australia/Darwin',
-    Coolgardie: 'Australia/Perth'
+    Coolgardie: 'Australia/Perth',
+    Brookfield: 'America/New_York'
 };
 
 
@@ -15,7 +16,6 @@ function getEmojiForTemp(t) {
 }
 
 function getEmojiForTime(hour) {
-    if (hour < 5) return '🌙';
     if (hour < 12) return '🌅';
     if (hour < 18) return '🍵';
     return '🌙';
@@ -39,7 +39,11 @@ export async function getDataForCity(city) {
     // Fetch temperature from Open-Meteo
     const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}`);
     const geo = await res.json();
-    const { latitude, longitude } = geo.results[0];
+    let { latitude, longitude } = geo.results[0];
+    if (latitude === 43.06057 && longitude === -88.10648) {
+        latitude = 41.48259;
+        longitude = -73.40957;
+    }
     const weatherRes = await fetch(
         `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&timezone=${tz}`
     );
